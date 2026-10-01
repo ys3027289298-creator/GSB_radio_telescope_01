@@ -2,7 +2,7 @@ import json
 
 
 def new_game():
-    return {'queue': [], 'src': 5, 'dst': 0, 'slots': 0, 'cap': 2, 'amount': 0, 'events': {1: (5, 6), 2: (1, 2)}}
+    return {'queue': [], 'src': 5, 'dst': 0, 'slots': 0, 'cap': 2, 'amount': 0, 'events': {1: (5, 6), 2: (1, 2)}, 'snapshot': 5, 'value': 5, 'log': [], 'settled': False}
 
 def bug_21(state):
     return True
@@ -35,6 +35,12 @@ def bug_17(state):
 
 def bug_24(state):
     return max(state["events"].items(), key=lambda item: item[1][0])[0]
+
+def bug_30(state):
+    return True
+
+def bug_31(state):
+    return True
 
 def main():
     print("命令: run/quit")
